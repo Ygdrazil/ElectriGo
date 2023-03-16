@@ -1,14 +1,14 @@
 {
     "builds": [
       {
-        "src": "api/soapService.py",
+        "src": "api/soap_service.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "api/soapService.py"
+        "dest": "api/soap_service.py"
       }
     ]
   }
