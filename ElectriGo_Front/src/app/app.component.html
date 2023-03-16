@@ -1,0 +1,23 @@
+<div id="app-container">
+        <div id="search-form">
+            <form [formGroup]="routeForm" (ngSubmit)="routeSearch()">
+                <select formControlName="vehicle">
+                    <option *ngFor="let vehicle of vehicles" value="{{vehicle.id}}">{{ vehicle.naming.make + " : " + vehicle.naming.model}}</option>
+                </select>
+                <input type="text" placeholder="From" formControlName="from"/>
+                <input type="text" placeholder="To" formControlName="to"/>
+                <input type="submit" value="Search" />
+            </form>
+        </div>
+        <div id="map">
+            <app-map #myMap></app-map>
+        </div>
+</div>
+<div id="route-info">
+    <div>
+        Travel time : {{this.routeTime | time }}
+    </div>
+    <div>
+        Travel cost : 
+    </div>
+</div>

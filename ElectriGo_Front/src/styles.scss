@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+body {
+    height: 100vh;
+    background-color: #242629;
+}
+
+input, select {
+    background-color: #16161a;
+    color: #fffffe;
+    height: 4rem;
+    padding: 8px 12px;
+    border: 0px;
+    border-radius: 3px;
+
+    font-size: 14px;
+    font-weight: 700;
+    
+    &:focus {
+        outline: #7f5af0 solid 1px;
+    }
+}
