@@ -31,6 +31,8 @@ export class AppComponent {
 
   routeTime = 0;
 
+  routeCost = 0;
+
   @ViewChild('myMap') myMap!: MapComponent;
 
   constructor(private fb: FormBuilder, private geocoder: GeocoderService, private routing: RoutingService, private overpass: OverpassService, private vehiclesService: VehiclesService, private soap: SoapService, private rest: RouteCostService) { }
@@ -125,11 +127,10 @@ export class AppComponent {
   getRouteInfos(total_distance: number, nb_stops: number) {
     console.log("distance : ", total_distance);
     this.soap.calculateRouteTime(total_distance, 100 * 1000, nb_stops).subscribe((e: number) => {
-      console.log(e);
       this.routeTime = e;
     });
 
-    this.rest.getRouteCost(total_distance).subscribe(e => console.log("cost ", e));
+    this.rest.getRouteCost(total_distance).subscribe(e => this.routeCost = e);
   }
 
 }

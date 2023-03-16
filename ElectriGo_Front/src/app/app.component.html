@@ -18,6 +18,6 @@
         Travel time : {{this.routeTime | time }}
     </div>
     <div>
-        Travel cost : 
+        Travel cost : {{ (this.routeCost != 0 ? this.routeCost : null) | currency: 'EUR' }}
     </div>
 </div>
