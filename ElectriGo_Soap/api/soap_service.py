@@ -18,5 +18,5 @@ application = Application([SoapService], 'spyne.electrigo.duree.soap',
 wsgi_application = WsgiApplication(application)
 
 app = wsgi_application
-server = make_server('localhost', 8000, wsgi_application)
-server.serve_forever()
+# server = make_server('localhost', 8000, wsgi_application)
+# server.serve_forever()
